@@ -25,7 +25,7 @@ variable "vpc" {
 
 variable "security_group" {
   type        = string
-  description = Security Group Name"
+  description = "Security Group Name"
 }
 
 variable "subnet" {
