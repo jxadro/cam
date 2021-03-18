@@ -38,3 +38,8 @@ variable "size" {
   description = "IBM Cloud Profile"
 }
 
+variable "zone" {
+  type        = string
+  description = "Zone"
+}
+

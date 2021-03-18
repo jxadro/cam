@@ -1,6 +1,5 @@
 locals {
   BASENAME = "jordax"
-  ZONE     = "us-south-1"
 }
 
 provider "ibm" {
@@ -38,7 +37,7 @@ data "ibm_resource_group" "group" {
 resource "ibm_is_instance" "vsi1" {
   name    = "${local.BASENAME}-${var.instance_name}"
   vpc     = data.ibm_is_vpc.vpc.id
-  zone    = local.ZONE
+  zone    = var.zone
   keys    = [data.ibm_is_ssh_key.ssh_key_id.id]
   image   = data.ibm_is_image.ubuntu.id
   profile = var.size
