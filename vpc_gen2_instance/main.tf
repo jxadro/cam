@@ -59,6 +59,10 @@ output "ip" {
   value = ibm_is_floating_ip.fip1.address
 }
 
+output "instance" {
+  value = ibm_is_instance.vsi1
+}
+
 output "ssh" {
   value = data.ibm_is_ssh_key.ssh_key_id.fingerprint
 }
