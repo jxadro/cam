@@ -25,9 +25,10 @@ data "ibm_is_image" "centos" {
   name = "ibm-centos-7-6-minimal-amd64-2"
 }
 
-data "ibm_is_ssh_key" "ssh_key_id" {
-  name = var.ssh_key_name
-}
+
+#data "ibm_is_ssh_key" "ssh_key_id" {
+#  name = var.ssh_key_name
+#}
 
 data "ibm_resource_group" "group" {
   name = var.resource_group
