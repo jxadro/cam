@@ -71,6 +71,7 @@ output "instance" {
 }
 
 output "ssh" {
-  value = data.ibm_is_ssh_key.ssh_key_id
+#  value = data.ibm_is_ssh_key.ssh_key_id
+  value= "Testing"
 }
 
