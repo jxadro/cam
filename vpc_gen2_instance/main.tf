@@ -1,7 +1,5 @@
 locals {
   BASENAME = "jordax"
-  var.size == "dev" ? "cx2-2x4" : "cx2-2x4"
-  
 }
 
 provider "ibm" {
@@ -42,7 +40,7 @@ resource "ibm_is_instance" "vsi1" {
   zone    = var.zone
   keys    = [data.ibm_is_ssh_key.ssh_key_id.id]
   image   = data.ibm_is_image.ubuntu.id
-  profile = var.size
+  profile = "${var.size == "dev" ? "cx2-2x4" : var.size == "pro" ? "cx2-2x4" : "cx2-2x4"}"
   resource_group = data.ibm_resource_group.group.id
 
   primary_network_interface {
