@@ -60,6 +60,6 @@ output "ip" {
 }
 
 output "ssh" {
-  value = ibm_is_ssh_key.ssh_key_id.fingerprint
+  value = data.ibm_is_ssh_key.ssh_key_id.fingerprint
 }
 
