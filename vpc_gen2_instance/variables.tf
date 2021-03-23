@@ -35,11 +35,17 @@ variable "subnet" {
 
 variable "size" {
   type        = string
-  description = "IBM Cloud Profile"
+  description = "dev or pro and in the terraform the profile template will be choosen"
 }
 
 variable "zone" {
   type        = string
   description = "Zone"
 }
+
+variable "ssh_public_key" {
+  type        = string
+  description = "SSH Public Key"
+}
+
 

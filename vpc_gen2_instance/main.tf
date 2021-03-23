@@ -21,7 +21,7 @@ data "ibm_is_subnet" "subnet1" {
   name = var.subnet
 }
 
-data "ibm_is_image" "ubuntu" {
+data "ibm_is_image" "centos" {
   name = "ibm-centos-7-6-minimal-amd64-2"
 }
 
@@ -33,13 +33,19 @@ data "ibm_resource_group" "group" {
   name = var.resource_group
 }
 
+resource "ibm_is_ssh_key" "new_key" {
+    name = "${local.BASENAME}-${var.instance_name}"
+    public_key = var.ssh_public_key
+}
+
 
 resource "ibm_is_instance" "vsi1" {
   name    = "${local.BASENAME}-${var.instance_name}"
   vpc     = data.ibm_is_vpc.vpc.id
   zone    = var.zone
-  keys    = [data.ibm_is_ssh_key.ssh_key_id.id]
-  image   = data.ibm_is_image.ubuntu.id
+  #keys    = [data.ibm_is_ssh_key.ssh_key_id.id]
+  keys    = [ibm_is_ssh_key.new_key.id]  
+  image   = data.ibm_is_image.centos.id
   profile = "${var.size == "dev" ? "cx2-2x4" : var.size == "pro" ? "cx2-2x4" : "cx2-2x4"}"
   resource_group = data.ibm_resource_group.group.id
 
