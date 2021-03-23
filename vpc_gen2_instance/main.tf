@@ -1,7 +1,7 @@
 locals {
   BASENAME = "jordax"
-  var.size == "dev" ? "cx2-2x4"
-  var.size == "pro" ? "cx2-2x4"
+  var.size == "dev" ? "cx2-2x4" : var.size == "pro" ? "cx2-2x4" : "cx2-2x4"
+  
 }
 
 provider "ibm" {
