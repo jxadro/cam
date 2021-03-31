@@ -1,6 +1,6 @@
 {
   "service": {
-    "version": "1.0.0.2",
+    "version": "1.0.0.4",
     "specVersion": "v3",
     "catalog_metadata": {
       "name": "LAMP",
@@ -316,7 +316,7 @@
                 "template_data_objects": {},
                 "template_params": {
                   "inventory_name": "${templates.inventorb8438570.output.inventory_name}",
-                  "credential_name": "LAMP",
+                  "credential_name": "SSHPrivateKey",
                   "extra_variables": {}
                 },
                 "outputs": [
@@ -405,7 +405,7 @@
                 "template_data_objects": {},
                 "template_params": {
                   "inventory_name": "${templates.inventore2c0ae94.output.inventory_name}",
-                  "credential_name": "LAMP",
+                  "credential_name": "SSHPrivateKey",
                   "extra_variables": {}
                 },
                 "outputs": [
