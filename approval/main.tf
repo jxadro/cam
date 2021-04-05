@@ -10,7 +10,7 @@ variable "itemid" {
     description = "Item Id"
 }
 
-variable "provider" {
+variable "cloud_provider" {
     description = "Cloud Provider"
 }
 
