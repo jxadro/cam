@@ -10,8 +10,20 @@ variable "itemid" {
     description = "Item Id"
 }
 
+variable "provider" {
+    description = "Cloud Provider"
+}
+
+variable "service" {
+    description = "Service description to approve"
+}
+
+variable "environment" {
+    description = "Environment"
+}
+
 data "http" "create" {
-  url = "http://post2get-post2get.apps.hubcluster.mcmpoc.com/?catalogid=${var.catalogid}&itemid=${var.itemid}&host=${var.host}"
+  url = "http://post2get-post2get.apps.hubcluster.mcmpoc.com/?catalogid=${var.catalogid}&itemid=${var.itemid}&host=${var.host}&service=${var.service}&env=${var.environment}&provider=${var.provider}"
 
   # Optional request headers
   request_headers = {
