@@ -23,7 +23,7 @@ variable "environment" {
 }
 
 data "http" "create" {
-  url = "http://post2get-post2get.apps.hubcluster.mcmpoc.com/?catalogid=${var.catalogid}&itemid=${var.itemid}&host=${var.host}&service=${var.service}&env=${var.environment}&provider=${var.provider}"
+  url = "http://post2get-post2get.apps.hubcluster.mcmpoc.com/?catalogid=${var.catalogid}&itemid=${var.itemid}&host=${var.host}&service=${var.service}&env=${var.environment}&provider=${var.cloud_provider}"
 
   # Optional request headers
   request_headers = {
